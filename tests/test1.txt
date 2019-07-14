@@ -1,0 +1,27 @@
+.data
+a: .word 5
+b: .char 7, 4
+c: .align 8
+.global b
+.global d
+d: .skip 3
+
+.text
+aladd a, r4
+gtmul r3, b
+eqcmp r3[c], r0
+neshl *47, r1
+alpush 39
+gtpop r5[12]
+.word 19
+gtsub r1, &l
+gtcall m
+
+.rodata 
+.skip 5
+m: .word 3
+
+.bss
+l: .word 20
+
+.end

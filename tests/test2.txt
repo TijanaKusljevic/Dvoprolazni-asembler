@@ -1,0 +1,26 @@
+.data
+a:
+.char 1, 2, 3
+.align 8
+.global b
+b:
+c:
+.word 123
+.word a
+
+.text
+d: almov *100, r0
+eqadd r1, $b
+nepop r5[a]
+alshr r4, 3
+eqdiv r1, &c
+gtjmp d
+alsub m, r0
+
+.rodata
+m: .long 123456
+
+.bss
+.skip 5
+
+.end

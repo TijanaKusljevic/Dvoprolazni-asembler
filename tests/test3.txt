@@ -1,0 +1,22 @@
+.data 
+a: .long 1234567
+b: .word a
+.global b
+
+.text
+gtjmp $t
+k:
+almul r1, r2
+gtiret
+t:
+alshl r0, 3
+eqcmp r3, &b
+necall k
+
+eqret
+
+.rodata
+.skip 3
+m: .char 8
+
+.end
